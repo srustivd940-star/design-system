@@ -2,12 +2,15 @@
 
 <cite>
 **Referenced Files in This Document**
+- [.gitignore](file://.gitignore)
+- [index.html](file://index.html)
 - [package.json](file://package.json)
 - [vite.config.ts](file://vite.config.ts)
 - [tsconfig.json](file://tsconfig.json)
 - [vitest.config.ts](file://vitest.config.ts)
 - [src/main.tsx](file://src/main.tsx)
 - [src/App.tsx](file://src/App.tsx)
+- [src/index.css](file://src/index.css)
 - [src/types/index.ts](file://src/types/index.ts)
 - [src/styles/global.css](file://src/styles/global.css)
 - [src/components/Button/Button.tsx](file://src/components/Button/Button.tsx)
@@ -20,38 +23,67 @@
 - [tests/setup.ts](file://tests/setup.ts)
 </cite>
 
+## Update Summary
+**Changes Made**
+- Added Git version control infrastructure documentation
+- Updated HTML5 entry point documentation
+- Enhanced development environment setup with proper Vite configuration
+- Improved installation instructions with Git requirements
+- Updated troubleshooting section with Git-related issues
+
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Project Structure](#project-structure)
-3. [Core Components](#core-components)
-4. [Architecture Overview](#architecture-overview)
-5. [Installation and Setup](#installation-and-setup)
-6. [Quick Start Guide](#quick-start-guide)
-7. [Build and Development Scripts](#build-and-development-scripts)
-8. [Integration Into Existing Applications](#integration-into-existing-applications)
-9. [Troubleshooting](#troubleshooting)
-10. [Appendices](#appendices)
+2. [Version Control and Repository Setup](#version-control-and-repository-setup)
+3. [Project Structure](#project-structure)
+4. [Core Components](#core-components)
+5. [Architecture Overview](#architecture-overview)
+6. [Installation and Setup](#installation-and-setup)
+7. [Quick Start Guide](#quick-start-guide)
+8. [Build and Development Scripts](#build-and-development-scripts)
+9. [Integration Into Existing Applications](#integration-into-existing-applications)
+10. [Troubleshooting](#troubleshooting)
+11. [Appendices](#appendices)
 
 ## Introduction
-This guide helps you install, run, and integrate the design system into your React application. It covers environment prerequisites, installation via package managers, development workflow, component usage, and how to build and test the system.
+This guide helps you install, run, and integrate the design system into your React application. The design system is built with modern web technologies including Git version control, Vite for development and build, TypeScript for type safety, and Vitest for testing. It provides reusable React components with consistent styling and behavior.
+
+## Version Control and Repository Setup
+The design system uses Git for version control and follows industry-standard practices for repository management. The repository includes proper configuration files for Git and a standard HTML5 entry point.
+
+**Git Infrastructure Features:**
+- `.gitignore` configured to exclude logs, node_modules, and IDE-specific files
+- Standard HTML5 entry point (`index.html`) as the application's main entry point
+- Proper package management with npm/yarn/pnpm support
+- Modern development workflow with Vite and TypeScript
+
+**Repository Structure Benefits:**
+- Clean separation of concerns with dedicated directories for source code, tests, and assets
+- Scalable architecture supporting component-based development
+- Comprehensive testing infrastructure with Vitest
+- Type-safe development with TypeScript
+
+**Section sources**
+- [.gitignore:1-25](file://.gitignore#L1-L25)
+- [index.html:1-14](file://index.html#L1-L14)
 
 ## Project Structure
-The design system is organized around reusable React components, shared styles, and TypeScript types. The Vite toolchain powers development and builds, while Vitest runs tests.
+The design system is organized around reusable React components, shared styles, and TypeScript types. The Vite toolchain powers development and builds, while Vitest runs tests. The project follows a modular architecture with clear separation between components, layouts, and shared resources.
 
 ```mermaid
 graph TB
 A["package.json<br/>scripts and devDependencies"] --> B["vite.config.ts<br/>Vite config"]
 A --> C["tsconfig.json<br/>TypeScript compiler options"]
 A --> D["vitest.config.ts<br/>Test runner config"]
-E["src/main.tsx<br/>React root"] --> F["src/App.tsx<br/>Demo app"]
-F --> G["src/layouts/DefaultLayout/DefaultLayout.tsx<br/>Layout shell"]
-F --> H["src/components/Button/Button.tsx<br/>Button component"]
-F --> I["src/components/Input/Input.tsx<br/>Input component"]
-H --> J["src/components/Button/Button.css<br/>Button styles"]
-I --> K["src/components/Input/Input.css<br/>Input styles"]
-F --> L["src/styles/global.css<br/>Global tokens and base styles"]
-H --> M["src/components/Button/index.ts<br/>Component re-export"]
-I --> N["src/components/Input/index.ts<br/>Component re-export"]
+E["index.html<br/>HTML5 entry point"] --> F["src/main.tsx<br/>React root"]
+F --> G["src/App.tsx<br/>Demo app"]
+G --> H["src/layouts/DefaultLayout/DefaultLayout.tsx<br/>Layout shell"]
+G --> I["src/components/Button/Button.tsx<br/>Button component"]
+G --> J["src/components/Input/Input.tsx<br/>Input component"]
+I --> K["src/components/Button/Button.css<br/>Button styles"]
+J --> L["src/components/Input/Input.css<br/>Input styles"]
+G --> M["src/styles/global.css<br/>Global tokens and base styles"]
+I --> N["src/components/Button/index.ts<br/>Component re-export"]
+J --> O["src/components/Input/index.ts<br/>Component re-export"]
 ```
 
 **Diagram sources**
@@ -59,6 +91,7 @@ I --> N["src/components/Input/index.ts<br/>Component re-export"]
 - [vite.config.ts:1-8](file://vite.config.ts#L1-L8)
 - [tsconfig.json:1-27](file://tsconfig.json#L1-L27)
 - [vitest.config.ts:1-10](file://vitest.config.ts#L1-L10)
+- [index.html:1-14](file://index.html#L1-L14)
 - [src/main.tsx:1-11](file://src/main.tsx#L1-L11)
 - [src/App.tsx:1-148](file://src/App.tsx#L1-L148)
 - [src/layouts/DefaultLayout/DefaultLayout.tsx:1-27](file://src/layouts/DefaultLayout/DefaultLayout.tsx#L1-L27)
@@ -75,17 +108,19 @@ I --> N["src/components/Input/index.ts<br/>Component re-export"]
 - [vite.config.ts:1-8](file://vite.config.ts#L1-L8)
 - [tsconfig.json:1-27](file://tsconfig.json#L1-L27)
 - [vitest.config.ts:1-10](file://vitest.config.ts#L1-L10)
+- [index.html:1-14](file://index.html#L1-L14)
 - [src/main.tsx:1-11](file://src/main.tsx#L1-L11)
 - [src/App.tsx:1-148](file://src/App.tsx#L1-L148)
 - [src/styles/global.css:1-157](file://src/styles/global.css#L1-L157)
 
 ## Core Components
-This system provides foundational UI elements with consistent styling and behavior. The most commonly used components include Button and Input, along with supporting layout and typography.
+This system provides foundational UI elements with consistent styling and behavior. The most commonly used components include Button and Input, along with supporting layout and typography components.
 
 Key capabilities:
-- Button supports variants and sizes, with disabled and click handling.
-- Input supports label, placeholder, value binding, error messaging, and accessibility attributes.
-- DefaultLayout composes top bar, context header, primary workspace, secondary panel, and footer.
+- **Button**: Supports variants (primary/secondary), sizes (sm/md/lg), disabled states, and click handling
+- **Input**: Supports label, placeholder, value binding, error messaging, accessibility attributes, and various input types
+- **DefaultLayout**: Composes top bar, context header, primary workspace, secondary panel, and footer for complete page structure
+- **Type Safety**: Full TypeScript support with comprehensive prop interfaces
 
 **Section sources**
 - [src/components/Button/Button.tsx:1-34](file://src/components/Button/Button.tsx#L1-L34)
@@ -94,10 +129,16 @@ Key capabilities:
 - [src/types/index.ts:13-40](file://src/types/index.ts#L13-L40)
 
 ## Architecture Overview
-The design system is a Vite-powered React application with TypeScript and CSS Modules via CSS custom properties. Tests are executed with Vitest in a jsdom environment.
+The design system is a Vite-powered React application with TypeScript and CSS Modules via CSS custom properties. Tests are executed with Vitest in a jsdom environment. The architecture emphasizes modularity, type safety, and developer experience.
 
 ```mermaid
 graph TB
+subgraph "Version Control"
+VC1[".gitignore<br/>Git configuration"]
+end
+subgraph "Entry Point"
+EP1["index.html<br/>HTML5 entry point"]
+end
 subgraph "Runtime"
 R1["React Runtime"]
 R2["DOM Renderer"]
@@ -107,23 +148,29 @@ B1["Vite Dev Server"]
 B2["TypeScript Compiler"]
 T1["Vitest Runner"]
 end
-subgraph "Source"
+subgraph "Source Structure"
 S1["src/App.tsx"]
 S2["src/components/*"]
 S3["src/styles/*"]
 S4["src/types/index.ts"]
+S5["src/layouts/*"]
 end
+VC1 --> EP1
+EP1 --> S1
 S1 --> R1
 R1 --> R2
 S2 --> S1
 S3 --> S1
 S4 --> S1
+S5 --> S1
 B1 --> S1
 B2 --> S1
 T1 --> S1
 ```
 
 **Diagram sources**
+- [.gitignore:1-25](file://.gitignore#L1-L25)
+- [index.html:1-14](file://index.html#L1-L14)
 - [src/App.tsx:1-148](file://src/App.tsx#L1-L148)
 - [src/components/Button/Button.tsx:1-34](file://src/components/Button/Button.tsx#L1-L34)
 - [src/components/Input/Input.tsx:1-50](file://src/components/Input/Input.tsx#L1-L50)
@@ -135,34 +182,51 @@ T1 --> S1
 
 ## Installation and Setup
 Prerequisites:
-- Node.js matching the project’s TypeScript and Vite versions (as configured).
-- A package manager: npm or yarn.
+- **Node.js**: Compatible with the project's TypeScript and Vite versions
+- **Git**: Required for version control and repository management
+- **Package Manager**: npm, yarn, or pnpm (all supported)
+- **Git Client**: For repository operations and version control
 
-Steps:
-1. Install dependencies
-   - npm: Run the package manager install command in the project root.
-   - yarn: Run the package manager install command in the project root.
-2. Confirm TypeScript and Vite configurations are compatible with your Node.js version.
+Setup Steps:
+1. **Clone the Repository**
+   ```bash
+   git clone <repository-url>
+   cd design-system
+   ```
 
-Notes:
-- The project uses bundler module resolution and ES modules. Ensure your environment supports these settings.
+2. **Install Dependencies**
+   ```bash
+   # Using npm
+   npm install
+   
+   # Using yarn
+   yarn install
+   
+   # Using pnpm
+   pnpm install
+   ```
+
+3. **Verify Configuration**
+   - Confirm TypeScript and Vite configurations are compatible with your Node.js version
+   - Check that Git is properly initialized with `.gitignore` configured
 
 **Section sources**
 - [package.json:12-20](file://package.json#L12-L20)
 - [tsconfig.json:10-16](file://tsconfig.json#L10-L16)
+- [.gitignore:1-25](file://.gitignore#L1-L25)
 
 ## Quick Start Guide
 Follow these steps to import and use core components in your React application.
 
 Step-by-step:
-1. Import Button and Input in your component file.
-2. Add the global styles to your app entry to ensure design tokens and base styles are applied.
-3. Render Button and Input with props appropriate to your use case.
-4. Optionally wrap content in DefaultLayout to match the system’s page structure.
+1. **Import Components**: Import Button and Input from their respective directories
+2. **Add Global Styles**: Import global CSS at your app entry to ensure design tokens and base styles are applied
+3. **Render Components**: Use Button and Input with appropriate props for your use case
+4. **Optional Layout**: Wrap content in DefaultLayout to match the system's page structure
 
 Basic usage patterns:
-- Button: Provide variant and size, handle clicks, and disable when needed.
-- Input: Bind value and onChange, show optional labels and errors, and set input type.
+- **Button**: Provide variant and size, handle clicks, and disable when needed
+- **Input**: Bind value and onChange, show optional labels and errors, and set input type
 
 Example references:
 - Button component definition and props: [src/components/Button/Button.tsx:1-34](file://src/components/Button/Button.tsx#L1-L34), [src/types/index.ts:20-28](file://src/types/index.ts#L20-L28)
@@ -179,21 +243,21 @@ Example references:
 
 ## Build and Development Scripts
 Available scripts:
-- dev: Starts the Vite development server.
-- build: Runs TypeScript emit and builds the project with Vite.
-- preview: Serves the production build locally.
-- test: Runs Vitest tests.
+- **dev**: Starts the Vite development server with hot reloading
+- **build**: Runs TypeScript emit and builds the project with Vite
+- **preview**: Serves the production build locally for testing
+- **test**: Runs Vitest tests in watch mode
 
 How to use:
-- Development: Execute the dev script to start the local server.
-- Production build: Execute the build script to produce optimized assets.
-- Preview: Execute the preview script to inspect the production build.
-- Testing: Execute the test script to run unit tests.
+- **Development**: Execute `npm run dev` to start the local development server
+- **Production build**: Execute `npm run build` to produce optimized assets
+- **Preview**: Execute `npm run preview` to inspect the production build
+- **Testing**: Execute `npm run test` to run unit tests with Vitest
 
 Environment configuration:
-- Vite plugin for React is enabled.
-- TypeScript is configured for modern ECMAScript modules and strictness.
-- Vitest runs in jsdom with a setup file for DOM testing utilities.
+- **Vite**: React plugin enabled for JSX transformation
+- **TypeScript**: Configured for modern ECMAScript modules and strict type checking
+- **Vitest**: Runs in jsdom environment with DOM testing utilities
 
 **Section sources**
 - [package.json:6-11](file://package.json#L6-L11)
@@ -205,22 +269,29 @@ Environment configuration:
 ## Integration Into Existing Applications
 To integrate the design system into an existing React app:
 
-1. Copy or link the relevant parts:
-   - Components: src/components/Button and src/components/Input (and their styles).
-   - Types: src/types/index.ts.
-   - Styles: src/styles/global.css and related tokens.
-   - Layout: src/layouts/DefaultLayout if you want to reuse the page shell.
+1. **Copy Relevant Parts**:
+   - **Components**: `src/components/Button` and `src/components/Input` (and their styles)
+   - **Types**: `src/types/index.ts` for prop interfaces
+   - **Styles**: `src/styles/global.css` and related token files
+   - **Layout**: `src/layouts/DefaultLayout` if you want the complete page shell
 
-2. Add global styles:
-   - Import the global CSS at the root of your application so design tokens and base styles are available.
+2. **Add Global Styles**:
+   ```javascript
+   // At your application's entry point
+   import './styles/global.css';
+   ```
 
-3. Use components:
-   - Import Button and Input from their respective directories.
-   - Pass props as defined in the TypeScript interfaces.
+3. **Use Components**:
+   ```javascript
+   import { Button, Input } from './components/Button';
+   // or
+   import { Button, Input } from './components/Input';
+   ```
 
-4. Align build configuration:
-   - Ensure your project uses a compatible TypeScript version and module resolution strategy.
-   - If you use Vite, enable the React plugin similarly.
+4. **Align Build Configuration**:
+   - Ensure your project uses compatible TypeScript version
+   - Enable React plugin in Vite if using Vite
+   - Configure module resolution for ES modules
 
 References:
 - Component exports and entry points: [src/components/Button/index.ts:1-3](file://src/components/Button/index.ts#L1-L3), [src/components/Input/index.ts:1-3](file://src/components/Input/index.ts#L1-L3)
@@ -236,34 +307,60 @@ References:
 ## Troubleshooting
 Common setup issues and resolutions:
 
-- TypeScript errors or missing types
-  - Cause: Mismatched TypeScript version or module resolution settings.
-  - Resolution: Align your TypeScript version with the project configuration and ensure bundler module resolution is enabled.
+**Git and Repository Issues:**
+- **Git not installed or configured**
+  - Cause: Missing Git client
+  - Resolution: Install Git and configure user.name and user.email
+- **Repository cloning issues**
+  - Cause: Network connectivity or authentication problems
+  - Resolution: Check internet connection and Git credentials
 
-- Vite plugin not found
-  - Cause: Missing or incorrect Vite plugin configuration.
-  - Resolution: Enable the React plugin in your Vite config as shown in the project’s configuration.
+**TypeScript Errors:**
+- **TypeScript version mismatch**
+  - Cause: Mismatched TypeScript version or module resolution settings
+  - Resolution: Align your TypeScript version with project configuration
+- **Module resolution errors**
+  - Cause: Incorrect module resolution strategy
+  - Resolution: Ensure bundler module resolution is enabled
 
-- Tests fail in jsdom environment
-  - Cause: Missing DOM testing utilities.
-  - Resolution: Ensure your test setup includes DOM helpers similar to the project’s setup file.
+**Vite Development Issues:**
+- **Vite plugin not found**
+  - Cause: Missing or incorrect Vite plugin configuration
+  - Resolution: Enable the React plugin in Vite config
+- **Port conflicts during development**
+  - Cause: Port 5173 already in use
+  - Resolution: Change Vite port in config or stop conflicting processes
 
-- Styles not applying
-  - Cause: Global styles not imported at the app root.
-  - Resolution: Import the global CSS file at your application’s entry point.
+**Testing Environment Problems:**
+- **Tests fail in jsdom environment**
+  - Cause: Missing DOM testing utilities
+  - Resolution: Ensure test setup includes DOM helpers
+- **CSS modules not loading**
+  - Cause: Missing CSS preprocessing configuration
+  - Resolution: Configure Vite for CSS modules or use standard CSS imports
+
+**Styles and Assets:**
+- **Styles not applying**
+  - Cause: Global styles not imported at app root
+  - Resolution: Import global CSS file at application entry point
+- **HTML5 entry point issues**
+  - Cause: Missing or misconfigured index.html
+  - Resolution: Ensure index.html exists with proper root div and script tag
 
 **Section sources**
+- [.gitignore:1-25](file://.gitignore#L1-L25)
 - [tsconfig.json:10-16](file://tsconfig.json#L10-L16)
 - [vite.config.ts:1-8](file://vite.config.ts#L1-L8)
 - [vitest.config.ts:1-10](file://vitest.config.ts#L1-L10)
 - [tests/setup.ts:1-2](file://tests/setup.ts#L1-L2)
 - [src/styles/global.css:1-6](file://src/styles/global.css#L1-L6)
+- [index.html:1-14](file://index.html#L1-L14)
 
 ## Appendices
 
 ### TypeScript and JavaScript Usage Notes
-- TypeScript: Use the provided props interfaces to type Button and Input components.
-- JavaScript: You can consume the same components without explicit typing; pass props as documented by the interfaces.
+- **TypeScript**: Use the provided prop interfaces to type Button and Input components
+- **JavaScript**: You can consume the same components without explicit typing; pass props as documented by the interfaces
 
 References:
 - Button props: [src/types/index.ts:20-28](file://src/types/index.ts#L20-L28)
