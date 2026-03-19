@@ -2,6 +2,8 @@
  * TypeScript Types - Job Notification App Design System
  */
 
+import type { ReactNode } from 'react';
+
 // ========================================
 // Status Types
 // ========================================
@@ -18,7 +20,7 @@ export type ButtonSize = 'sm' | 'md' | 'lg';
 // ========================================
 
 export interface ButtonProps {
-  children: React.ReactNode;
+  children: ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
   disabled?: boolean;
@@ -40,7 +42,7 @@ export interface InputProps {
 }
 
 export interface CardProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
@@ -70,7 +72,7 @@ export interface ContextHeaderProps {
 }
 
 export interface PrimaryWorkspaceProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
@@ -90,10 +92,10 @@ export interface ProofFooterProps {
 }
 
 export interface DefaultLayoutProps {
-  topBar: React.ReactNode;
-  contextHeader: React.ReactNode;
-  primaryWorkspace: React.ReactNode;
-  secondaryPanel: React.ReactNode;
-  proofFooter: React.ReactNode;
+  topBar: ReactNode;
+  contextHeader: ReactNode;
+  primaryWorkspace: ReactNode;
+  secondaryPanel: ReactNode;
+  proofFooter: ReactNode;
   className?: string;
 }

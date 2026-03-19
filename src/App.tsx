@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { DefaultLayout } from './layouts/DefaultLayout';
 import { TopBar } from './components/TopBar';
 import { ContextHeader } from './components/ContextHeader';
