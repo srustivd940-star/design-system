@@ -1,0 +1,26 @@
+@import '../../styles/tokens.css';
+
+.default-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+/* 
+  Global Layout Structure:
+  [Top Bar] -> [Context Header] -> [Primary Workspace (70%) + Secondary Panel (30%)] -> [Proof Footer]
+*/
+
+.default-layout__workspace {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Responsive: Stack panels on smaller screens */
+@media (max-width: 768px) {
+  .default-layout__workspace {
+    flex-direction: column;
+  }
+}

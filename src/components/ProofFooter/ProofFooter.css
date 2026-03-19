@@ -1,0 +1,51 @@
+@import '../../styles/tokens.css';
+
+.proof-footer {
+  background-color: var(--color-background-elevated);
+  border-top: var(--border-subtle);
+  padding: var(--space-3);
+}
+
+.proof-footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.proof-footer__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.proof-footer__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.proof-footer__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+}
+
+.proof-footer__item--checked {
+  color: var(--color-success);
+}
+
+.proof-footer__checkbox {
+  font-size: var(--text-lg);
+  line-height: 1;
+}
+
+.proof-footer__label {
+  font-weight: 500;
+}

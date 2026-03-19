@@ -1,0 +1,9 @@
+@import '../../styles/tokens.css';
+
+.card {
+  background-color: var(--color-background-elevated);
+  border: var(--border-subtle);
+  border-radius: var(--border-radius);
+  padding: var(--space-3);
+  /* No drop shadows - only subtle borders */
+}

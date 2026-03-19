@@ -1,0 +1,107 @@
+/**
+ * Design Tokens - Job Notification App
+ * 
+ * Philosophy: Calm, intentional, coherent, confident
+ * No gradients, no glassmorphism, no neon colors, no animation noise
+ */
+
+:root {
+  /* ========================================
+     COLOR SYSTEM
+     Maximum 4 colors across entire UI
+     ======================================== */
+  
+  /* Background: Off-white, not pure white */
+  --color-background: #F7F6F3;
+  --color-background-elevated: #FFFFFF;
+  
+  /* Primary Text: Near black for strong contrast */
+  --color-text-primary: #111111;
+  --color-text-secondary: #555555;
+  
+  /* Accent: Deep red - used sparingly for primary actions */
+  --color-accent: #8B0000;
+  --color-accent-hover: #6B0000;
+  
+  /* Semantic Colors - Muted, professional */
+  --color-success: #5A7D5A;
+  --color-warning: #B8860B;
+  
+  /* Borders - Subtle */
+  --color-border: #E0DFDC;
+  --color-border-focus: #8B0000;
+  
+  /* ========================================
+     SPACING SYSTEM
+     Only use: 8px, 16px, 24px, 40px, 64px
+     ======================================== */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 40px;
+  --space-5: 64px;
+  
+  /* ========================================
+     TYPOGRAPHY
+     ======================================== */
+  /* Headings: Serif font, large, confident, generous spacing */
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* Font Sizes */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 40px;
+  --text-4xl: 48px;
+  
+  /* Line Heights */
+  --leading-tight: 1.3;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.8;
+  
+  /* Letter Spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.02em;
+  
+  /* Max width for text blocks */
+  --max-text-width: 720px;
+  
+  /* ========================================
+     LAYOUT
+     ======================================== */
+  --topbar-height: 64px;
+  --primary-workspace-width: 70%;
+  --secondary-panel-width: 30%;
+  
+  /* ========================================
+     BORDERS & SHADOWS
+     ======================================== */
+  --border-radius: 4px;
+  --border-width: 1px;
+  --border-subtle: 1px solid var(--color-border);
+  
+  /* No heavy shadows - only subtle for elevation */
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05);
+  
+  /* ========================================
+     INTERACTIONS
+     Transitions: 150-200ms, ease-in-out
+     No bounce, no parallax
+     ======================================== */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 200ms ease-in-out;
+  
+  /* ========================================
+     Z-INDEX SCALE
+     ======================================== */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+}

@@ -1,0 +1,22 @@
+@import './styles/tokens.css';
+
+.demo-section {
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.demo-section:last-child {
+  margin-bottom: 0;
+}
+
+.demo-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+/* Ensure cards in demo have consistent spacing */
+.demo-section .input-wrapper {
+  max-width: 400px;
+}

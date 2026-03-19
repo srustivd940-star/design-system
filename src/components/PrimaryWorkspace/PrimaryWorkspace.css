@@ -1,0 +1,18 @@
+@import '../../styles/tokens.css';
+
+.primary-workspace {
+  flex: 0 0 var(--primary-workspace-width);
+  padding: var(--space-3);
+  background-color: var(--color-background);
+  min-height: calc(100vh - var(--topbar-height) - 200px);
+  overflow-y: auto;
+}
+
+/* Clean cards, predictable components, no crowding */
+.primary-workspace > * {
+  margin-bottom: var(--space-3);
+}
+
+.primary-workspace > *:last-child {
+  margin-bottom: 0;
+}
