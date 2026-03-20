@@ -2,7 +2,7 @@ import React from 'react';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
-import { Dashboard, Saved, Digest, Settings, Proof, NotFound } from '../src/pages';
+import { Dashboard, Saved, Digest, Settings, Proof, NotFound, Landing } from '../src/pages';
 import { Navigation } from '../src/components/Navigation';
 import { MobileMenu } from '../src/components/MobileMenu';
 
@@ -14,7 +14,7 @@ describe('Route Components', () => {
       </MemoryRouter>
     );
     expect(screen.getByText('Dashboard')).toBeInTheDocument();
-    expect(screen.getByText('This section will be built in the next step.')).toBeInTheDocument();
+    expect(screen.getByText('No jobs yet. In the next step, you will load a realistic dataset.')).toBeInTheDocument();
   });
 
   it('Saved renders with correct title', () => {
@@ -23,7 +23,8 @@ describe('Route Components', () => {
         <Saved />
       </MemoryRouter>
     );
-    expect(screen.getByText('Saved')).toBeInTheDocument();
+    expect(screen.getByText('Saved Jobs')).toBeInTheDocument();
+    expect(screen.getByText('No saved jobs yet.')).toBeInTheDocument();
   });
 
   it('Digest renders with correct title', () => {
@@ -32,7 +33,8 @@ describe('Route Components', () => {
         <Digest />
       </MemoryRouter>
     );
-    expect(screen.getByText('Digest')).toBeInTheDocument();
+    expect(screen.getByText('Daily Digest')).toBeInTheDocument();
+    expect(screen.getByText('Your daily summary will appear here.')).toBeInTheDocument();
   });
 
   it('Settings renders with correct title', () => {
@@ -41,7 +43,9 @@ describe('Route Components', () => {
         <Settings />
       </MemoryRouter>
     );
-    expect(screen.getByText('Settings')).toBeInTheDocument();
+    expect(screen.getByText('Preferences')).toBeInTheDocument();
+    expect(screen.getByText('Role Keywords')).toBeInTheDocument();
+    expect(screen.getByText('Preferred Locations')).toBeInTheDocument();
   });
 
   it('Proof renders with correct title', () => {
@@ -51,6 +55,7 @@ describe('Route Components', () => {
       </MemoryRouter>
     );
     expect(screen.getByText('Proof')).toBeInTheDocument();
+    expect(screen.getByText('Artifact collection and verification will be implemented in the next step.')).toBeInTheDocument();
   });
 
   it('NotFound renders with correct message', () => {
@@ -61,6 +66,17 @@ describe('Route Components', () => {
     );
     expect(screen.getByText('Page Not Found')).toBeInTheDocument();
     expect(screen.getByText('The page you are looking for does not exist.')).toBeInTheDocument();
+  });
+
+  it('Landing renders with correct content', () => {
+    render(
+      <MemoryRouter>
+        <Landing />
+      </MemoryRouter>
+    );
+    expect(screen.getByText('Stop Missing The Right Jobs.')).toBeInTheDocument();
+    expect(screen.getByText('Precision-matched job discovery delivered daily at 9AM.')).toBeInTheDocument();
+    expect(screen.getByText('Start Tracking')).toBeInTheDocument();
   });
 });
 
