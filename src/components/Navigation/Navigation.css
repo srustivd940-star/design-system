@@ -1,0 +1,45 @@
+@import '../../styles/tokens.css';
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigation__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--space-3);
+}
+
+.navigation__item {
+  margin: 0;
+}
+
+.navigation__link {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.navigation__link:hover {
+  color: var(--color-text-primary);
+}
+
+.navigation__link--active {
+  color: var(--color-text-primary);
+  border-bottom-color: var(--color-accent);
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .navigation {
+    display: none;
+  }
+}

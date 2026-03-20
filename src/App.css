@@ -1,22 +1,48 @@
 @import './styles/tokens.css';
 
-.demo-section {
-  margin-top: var(--space-2);
-  margin-bottom: var(--space-3);
+.app {
+  min-height: 100vh;
+  background-color: var(--color-background);
 }
 
-.demo-section:last-child {
-  margin-bottom: 0;
+.app-header {
+  height: var(--topbar-height);
+  background-color: var(--color-background-elevated);
+  border-bottom: var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
 }
 
-.demo-buttons {
+.app-header__container {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
   align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-3);
 }
 
-/* Ensure cards in demo have consistent spacing */
-.demo-section .input-wrapper {
-  max-width: 400px;
+.app-header__brand {
+  flex-shrink: 0;
+}
+
+.app-header__logo {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  letter-spacing: var(--tracking-tight);
+  transition: color var(--transition-fast);
+}
+
+.app-header__logo:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.app__main {
+  min-height: calc(100vh - var(--topbar-height));
 }

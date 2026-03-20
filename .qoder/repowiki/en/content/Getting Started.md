@@ -25,11 +25,10 @@
 
 ## Update Summary
 **Changes Made**
-- Added Git version control infrastructure documentation
-- Updated HTML5 entry point documentation
-- Enhanced development environment setup with proper Vite configuration
-- Improved installation instructions with Git requirements
-- Updated troubleshooting section with Git-related issues
+- Updated TypeScript JSX compilation support with @types/react dependency
+- Modernized React import patterns and component typing
+- Enhanced TypeScript configuration with react-jsx JSX setting
+- Improved development environment setup with proper TypeScript and React integration
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -45,7 +44,7 @@
 11. [Appendices](#appendices)
 
 ## Introduction
-This guide helps you install, run, and integrate the design system into your React application. The design system is built with modern web technologies including Git version control, Vite for development and build, TypeScript for type safety, and Vitest for testing. It provides reusable React components with consistent styling and behavior.
+This guide helps you install, run, and integrate the design system into your React application. The design system is built with modern web technologies including Git version control, Vite for development and build, TypeScript for type safety, and Vitest for testing. It provides reusable React components with consistent styling and behavior, featuring modern TypeScript JSX compilation support and contemporary React import patterns.
 
 ## Version Control and Repository Setup
 The design system uses Git for version control and follows industry-standard practices for repository management. The repository includes proper configuration files for Git and a standard HTML5 entry point.
@@ -60,14 +59,14 @@ The design system uses Git for version control and follows industry-standard pra
 - Clean separation of concerns with dedicated directories for source code, tests, and assets
 - Scalable architecture supporting component-based development
 - Comprehensive testing infrastructure with Vitest
-- Type-safe development with TypeScript
+- Type-safe development with TypeScript and modern JSX compilation
 
 **Section sources**
 - [.gitignore:1-25](file://.gitignore#L1-L25)
 - [index.html:1-14](file://index.html#L1-L14)
 
 ## Project Structure
-The design system is organized around reusable React components, shared styles, and TypeScript types. The Vite toolchain powers development and builds, while Vitest runs tests. The project follows a modular architecture with clear separation between components, layouts, and shared resources.
+The design system is organized around reusable React components, shared styles, and TypeScript types. The Vite toolchain powers development and builds, while Vitest runs tests. The project follows a modular architecture with clear separation between components, layouts, and shared resources, utilizing modern TypeScript JSX compilation.
 
 ```mermaid
 graph TB
@@ -87,9 +86,9 @@ J --> O["src/components/Input/index.ts<br/>Component re-export"]
 ```
 
 **Diagram sources**
-- [package.json:1-22](file://package.json#L1-L22)
+- [package.json:1-23](file://package.json#L1-L23)
 - [vite.config.ts:1-8](file://vite.config.ts#L1-L8)
-- [tsconfig.json:1-27](file://tsconfig.json#L1-L27)
+- [tsconfig.json:1-28](file://tsconfig.json#L1-L28)
 - [vitest.config.ts:1-10](file://vitest.config.ts#L1-L10)
 - [index.html:1-14](file://index.html#L1-L14)
 - [src/main.tsx:1-11](file://src/main.tsx#L1-L11)
@@ -104,9 +103,9 @@ J --> O["src/components/Input/index.ts<br/>Component re-export"]
 - [src/styles/global.css:1-157](file://src/styles/global.css#L1-L157)
 
 **Section sources**
-- [package.json:1-22](file://package.json#L1-L22)
+- [package.json:1-23](file://package.json#L1-L23)
 - [vite.config.ts:1-8](file://vite.config.ts#L1-L8)
-- [tsconfig.json:1-27](file://tsconfig.json#L1-L27)
+- [tsconfig.json:1-28](file://tsconfig.json#L1-L28)
 - [vitest.config.ts:1-10](file://vitest.config.ts#L1-L10)
 - [index.html:1-14](file://index.html#L1-L14)
 - [src/main.tsx:1-11](file://src/main.tsx#L1-L11)
@@ -114,13 +113,14 @@ J --> O["src/components/Input/index.ts<br/>Component re-export"]
 - [src/styles/global.css:1-157](file://src/styles/global.css#L1-L157)
 
 ## Core Components
-This system provides foundational UI elements with consistent styling and behavior. The most commonly used components include Button and Input, along with supporting layout and typography components.
+This system provides foundational UI elements with consistent styling and behavior. The most commonly used components include Button and Input, along with supporting layout and typography components. All components are fully typed with modern TypeScript patterns and use contemporary React import conventions.
 
 Key capabilities:
-- **Button**: Supports variants (primary/secondary), sizes (sm/md/lg), disabled states, and click handling
-- **Input**: Supports label, placeholder, value binding, error messaging, accessibility attributes, and various input types
+- **Button**: Supports variants (primary/secondary), sizes (sm/md/lg), disabled states, and click handling with proper TypeScript interfaces
+- **Input**: Supports label, placeholder, value binding, error messaging, accessibility attributes, and various input types with comprehensive type safety
 - **DefaultLayout**: Composes top bar, context header, primary workspace, secondary panel, and footer for complete page structure
-- **Type Safety**: Full TypeScript support with comprehensive prop interfaces
+- **Type Safety**: Full TypeScript support with comprehensive prop interfaces using React.FC and proper type annotations
+- **Modern React Patterns**: Components use modern React import patterns with explicit React imports and type annotations
 
 **Section sources**
 - [src/components/Button/Button.tsx:1-34](file://src/components/Button/Button.tsx#L1-L34)
@@ -129,7 +129,7 @@ Key capabilities:
 - [src/types/index.ts:13-40](file://src/types/index.ts#L13-L40)
 
 ## Architecture Overview
-The design system is a Vite-powered React application with TypeScript and CSS Modules via CSS custom properties. Tests are executed with Vitest in a jsdom environment. The architecture emphasizes modularity, type safety, and developer experience.
+The design system is a Vite-powered React application with TypeScript and CSS Modules via CSS custom properties. Tests are executed with Vitest in a jsdom environment. The architecture emphasizes modularity, type safety, and developer experience with modern TypeScript JSX compilation and contemporary React patterns.
 
 ```mermaid
 graph TB
@@ -175,9 +175,9 @@ T1 --> S1
 - [src/components/Button/Button.tsx:1-34](file://src/components/Button/Button.tsx#L1-L34)
 - [src/components/Input/Input.tsx:1-50](file://src/components/Input/Input.tsx#L1-L50)
 - [src/styles/global.css:1-157](file://src/styles/global.css#L1-L157)
-- [src/types/index.ts:1-100](file://src/types/index.ts#L1-L100)
+- [src/types/index.ts:1-102](file://src/types/index.ts#L1-L102)
 - [vite.config.ts:1-8](file://vite.config.ts#L1-L8)
-- [tsconfig.json:1-27](file://tsconfig.json#L1-L27)
+- [tsconfig.json:1-28](file://tsconfig.json#L1-L28)
 - [vitest.config.ts:1-10](file://vitest.config.ts#L1-L10)
 
 ## Installation and Setup
@@ -209,6 +209,9 @@ Setup Steps:
 3. **Verify Configuration**
    - Confirm TypeScript and Vite configurations are compatible with your Node.js version
    - Check that Git is properly initialized with `.gitignore` configured
+   - Verify TypeScript JSX compilation is set to `react-jsx` for optimal React development
+
+**Updated** Enhanced TypeScript configuration now includes modern JSX compilation settings and proper React type definitions
 
 **Section sources**
 - [package.json:12-20](file://package.json#L12-L20)
@@ -234,6 +237,8 @@ Example references:
 - Global styles import: [src/styles/global.css:1-6](file://src/styles/global.css#L1-L6)
 - Layout composition: [src/layouts/DefaultLayout/DefaultLayout.tsx:1-27](file://src/layouts/DefaultLayout/DefaultLayout.tsx#L1-L27)
 
+**Updated** Components now use modern React import patterns with explicit React imports and TypeScript type annotations for better development experience
+
 **Section sources**
 - [src/components/Button/Button.tsx:1-34](file://src/components/Button/Button.tsx#L1-L34)
 - [src/components/Input/Input.tsx:1-50](file://src/components/Input/Input.tsx#L1-L50)
@@ -256,13 +261,15 @@ How to use:
 
 Environment configuration:
 - **Vite**: React plugin enabled for JSX transformation
-- **TypeScript**: Configured for modern ECMAScript modules and strict type checking
+- **TypeScript**: Configured for modern ECMAScript modules and strict type checking with react-jsx JSX compilation
 - **Vitest**: Runs in jsdom environment with DOM testing utilities
+
+**Updated** TypeScript configuration now uses `react-jsx` JSX factory for optimal React development experience with better performance and type inference
 
 **Section sources**
 - [package.json:6-11](file://package.json#L6-L11)
 - [vite.config.ts:1-8](file://vite.config.ts#L1-L8)
-- [tsconfig.json:1-27](file://tsconfig.json#L1-L27)
+- [tsconfig.json:1-28](file://tsconfig.json#L1-L28)
 - [vitest.config.ts:1-10](file://vitest.config.ts#L1-L10)
 - [tests/setup.ts:1-2](file://tests/setup.ts#L1-L2)
 
@@ -292,11 +299,14 @@ To integrate the design system into an existing React app:
    - Ensure your project uses compatible TypeScript version
    - Enable React plugin in Vite if using Vite
    - Configure module resolution for ES modules
+   - Set TypeScript JSX to `react-jsx` for optimal React development
 
 References:
 - Component exports and entry points: [src/components/Button/index.ts:1-3](file://src/components/Button/index.ts#L1-L3), [src/components/Input/index.ts:1-3](file://src/components/Input/index.ts#L1-L3)
 - Component props: [src/types/index.ts:20-40](file://src/types/index.ts#L20-L40)
 - Global styles: [src/styles/global.css:1-157](file://src/styles/global.css#L1-L157)
+
+**Updated** Added TypeScript JSX configuration requirement for optimal React development experience
 
 **Section sources**
 - [src/components/Button/index.ts:1-3](file://src/components/Button/index.ts#L1-L3)
@@ -315,13 +325,16 @@ Common setup issues and resolutions:
   - Cause: Network connectivity or authentication problems
   - Resolution: Check internet connection and Git credentials
 
-**TypeScript Errors:**
+**TypeScript and JSX Compilation Issues:**
 - **TypeScript version mismatch**
   - Cause: Mismatched TypeScript version or module resolution settings
   - Resolution: Align your TypeScript version with project configuration
-- **Module resolution errors**
-  - Cause: Incorrect module resolution strategy
-  - Resolution: Ensure bundler module resolution is enabled
+- **JSX compilation errors**
+  - Cause: Incorrect JSX factory configuration
+  - Resolution: Ensure TypeScript JSX is set to `react-jsx` in tsconfig.json
+- **Missing React types**
+  - Cause: Missing @types/react dependency
+  - Resolution: Install @types/react dependency for proper TypeScript JSX compilation
 
 **Vite Development Issues:**
 - **Vite plugin not found**
@@ -347,6 +360,14 @@ Common setup issues and resolutions:
   - Cause: Missing or misconfigured index.html
   - Resolution: Ensure index.html exists with proper root div and script tag
 
+**Modern React Import Pattern Issues:**
+- **React import errors**
+  - Cause: Missing React import in components
+  - Resolution: Ensure components import React explicitly for JSX compilation
+- **Type annotation warnings**
+  - Cause: Missing type annotations or React.FC usage
+  - Resolution: Use proper TypeScript React patterns with explicit type annotations
+
 **Section sources**
 - [.gitignore:1-25](file://.gitignore#L1-L25)
 - [tsconfig.json:10-16](file://tsconfig.json#L10-L16)
@@ -359,8 +380,10 @@ Common setup issues and resolutions:
 ## Appendices
 
 ### TypeScript and JavaScript Usage Notes
-- **TypeScript**: Use the provided prop interfaces to type Button and Input components
+- **TypeScript**: Use the provided prop interfaces to type Button and Input components with modern React patterns
 - **JavaScript**: You can consume the same components without explicit typing; pass props as documented by the interfaces
+- **Modern JSX Compilation**: TypeScript uses `react-jsx` JSX factory for optimal React development experience
+- **React Import Patterns**: Components use explicit React imports and React.FC type annotations for better type inference
 
 References:
 - Button props: [src/types/index.ts:20-28](file://src/types/index.ts#L20-L28)
@@ -423,3 +446,15 @@ Input --> InputProps : "implements"
 - [src/types/index.ts:20-40](file://src/types/index.ts#L20-L40)
 - [src/components/Button/Button.tsx:5-13](file://src/components/Button/Button.tsx#L5-L13)
 - [src/components/Input/Input.tsx:5-15](file://src/components/Input/Input.tsx#L5-L15)
+
+### Modern TypeScript Configuration
+The design system uses modern TypeScript configuration optimized for React development:
+
+- **JSX Factory**: `react-jsx` for optimal React JSX compilation
+- **Module Resolution**: `bundler` for modern module resolution
+- **Strict Mode**: Enabled for better type safety
+- **React Types**: @types/react dependency for comprehensive React type definitions
+
+**Section sources**
+- [tsconfig.json:10-16](file://tsconfig.json#L10-L16)
+- [package.json:15](file://package.json#L15)
